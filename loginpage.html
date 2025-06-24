@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" href="ice-cream (1).png">
+  <title>Paradise Login Page</title>
+  <style>
+    body {
+  margin: 0;
+  padding: 0;
+  background-image: url("delicious.jpg");
+  background-size: cover;
+  font-family: Arial, sans-serif;
+  color: #fff;
+}
+
+.login-box {
+  position: absolute;
+  top: 50%;
+  left: 30%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  padding: 40px;
+  background: #f34478;
+  border-radius: 8px;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+}
+
+.login-box h2 {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.user-box {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.user-box input {
+  width: 100%;
+  padding: 10px 0;
+  background: none;
+  border: none;
+  border-bottom: 1px solid #fff;
+  color: #f34478;
+  outline: none;
+}
+
+.user-box label {
+  position: absolute;
+  top: 10px;
+  left: 0;
+  pointer-events: none;
+  transition: 0.5s;
+}
+
+.user-box input:focus + label,
+.user-box input:valid + label {
+  top: -20px;
+  font-size: 12px;
+  color: #f40317;
+}
+
+button {
+  background: #e4c4d0;
+  border: none;
+  padding: 10px;
+  width: 100%;
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  border-radius: 10px;
+}
+
+button:hover {
+  background: #9e7583;
+}
+
+  </style>
+</head>
+<body> 
+  <h1 style="color: rgb(230, 89, 112); margin-top: 20px; font-family: 'cursive' , Lucida Handwriting; margin-left: 16%;">"Scoop into happiness<br>welcome to Paradise."</h1>
+  <div class="login-box">
+    <h2>Login</h2>
+    <form id="loginForm">
+      <div class="user-box">
+        <input type="text" id="username" required />
+        <label>Username</label>
+      </div>
+      <div class="user-box">
+        <input type="password" id="password" required />
+        <label>Password</label>
+      </div>
+      <button type="submit">Login</button>
+    </form>
+    <p id="message"></p>
+  </div>
+  <script>
+    document.getElementById("loginForm").addEventListener("submit", function (e) {
+  e.preventDefault();
+  const username = document.getElementById("username").value;
+  const password = document.getElementById("password").value;
+
+  // Just a simple check for demo
+  if (username === "admin" && password === "password123") {
+    document.getElementById("message").textContent = "Login successful!";
+    document.getElementById("message").style.color = "lightgreen";
+  } else {
+    document.getElementById("message").textContent = "Invalid credentials!";
+    document.getElementById("message").style.color = "red";
+  }
+});
+
+  </script>
+</body>
+</html>
